@@ -86,7 +86,6 @@ namespace WWS_Trimmer
                             }
 
                             MessageBox.Show("Plik PDF zosta³ zapisany");
-                            label5.Text = (" ");
                         }
                     }
                 }

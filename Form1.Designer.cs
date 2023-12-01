@@ -43,6 +43,7 @@
             checkBoxRotate = new CheckBox();
             checkBoxRotateRv = new CheckBox();
             button2 = new Button();
+            button4 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -181,12 +182,23 @@
             // 
             button2.AllowDrop = true;
             button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button2.Location = new Point(149, 381);
+            button2.Location = new Point(12, 381);
             button2.Name = "button2";
             button2.Size = new Size(150, 29);
             button2.TabIndex = 15;
             button2.Text = "O programie";
             button2.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.AllowDrop = true;
+            button4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button4.Location = new Point(282, 381);
+            button4.Name = "button4";
+            button4.Size = new Size(150, 29);
+            button4.TabIndex = 16;
+            button4.Text = "Zgłoś błąd";
+            button4.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -194,6 +206,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(444, 422);
+            Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(checkBoxRotateRv);
             Controls.Add(checkBoxRotate);
@@ -233,5 +246,6 @@
         private CheckBox checkBoxRotate;
         private CheckBox checkBoxRotateRv;
         private Button button2;
+        private Button button4;
     }
 }
