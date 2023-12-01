@@ -1,9 +1,12 @@
 using System;
 using System.Windows.Forms;
 using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Canvas;
 using iText.Layout;
 using iText.Layout.Element;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+
 
 namespace WWS_Trimmer
 {
@@ -74,14 +77,23 @@ namespace WWS_Trimmer
                                         page.SetRotation((page.GetRotation() + 90) % 360);
                                     }
                                 }
+                                else if (checkBoxRotateRv.Checked)
+                                {
+                                    page.SetRotation((page.GetRotation() - 90) % 360);
+                                }
+
+
                             }
+
+                            MessageBox.Show("Plik PDF zosta³ zapisany");
+                            label5.Text = (" ");
                         }
                     }
-
-                    MessageBox.Show("Plik PDF zosta³ przyciêty i zapisany.");
-                    label5.Text = (" ");
                 }
             }
         }
+
+ 
     }
 }
+
