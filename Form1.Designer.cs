@@ -228,6 +228,7 @@
             button5.TabIndex = 18;
             button5.Text = "Narzędzie do łączenia PDF";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += Button5_Click;
             // 
             // Form1
             // 

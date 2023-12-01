@@ -29,28 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            minimizeButton = new Button();
             exitButton = new Button();
             FirstPDF = new Button();
             SecondPDF = new Button();
-            button1 = new Button();
+            buttonMergePdf = new Button();
             labelFirstPdf = new Label();
             labelSecondPdf = new Label();
             SuspendLayout();
-            // 
-            // minimizeButton
-            // 
-            minimizeButton.BackgroundImageLayout = ImageLayout.Zoom;
-            minimizeButton.FlatStyle = FlatStyle.Flat;
-            minimizeButton.ForeColor = SystemColors.ControlLightLight;
-            minimizeButton.Image = (Image)resources.GetObject("minimizeButton.Image");
-            minimizeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            minimizeButton.Location = new Point(730, 1);
-            minimizeButton.Name = "minimizeButton";
-            minimizeButton.RightToLeft = RightToLeft.No;
-            minimizeButton.Size = new Size(31, 39);
-            minimizeButton.TabIndex = 14;
-            minimizeButton.UseVisualStyleBackColor = true;
             // 
             // exitButton
             // 
@@ -58,12 +43,13 @@
             exitButton.FlatStyle = FlatStyle.Flat;
             exitButton.ForeColor = SystemColors.ControlLightLight;
             exitButton.Image = (Image)resources.GetObject("exitButton.Image");
-            exitButton.Location = new Point(762, 1);
+            exitButton.Location = new Point(360, 2);
             exitButton.Name = "exitButton";
             exitButton.RightToLeft = RightToLeft.No;
             exitButton.Size = new Size(37, 39);
             exitButton.TabIndex = 13;
             exitButton.UseVisualStyleBackColor = true;
+            exitButton.Click += exitButton_Click;
             // 
             // FirstPDF
             // 
@@ -75,6 +61,7 @@
             FirstPDF.TabIndex = 15;
             FirstPDF.Text = "Wybierz 1 PDF";
             FirstPDF.UseVisualStyleBackColor = true;
+            FirstPDF.Click += FirstPDF_Click;
             // 
             // SecondPDF
             // 
@@ -86,17 +73,19 @@
             SecondPDF.TabIndex = 16;
             SecondPDF.Text = "Wybierz 2 PDF";
             SecondPDF.UseVisualStyleBackColor = true;
+            SecondPDF.Click += SecondPDF_Click;
             // 
-            // button1
+            // buttonMergePdf
             // 
-            button1.AllowDrop = true;
-            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button1.Location = new Point(12, 258);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 29);
-            button1.TabIndex = 17;
-            button1.Text = "Wykonaj";
-            button1.UseVisualStyleBackColor = true;
+            buttonMergePdf.AllowDrop = true;
+            buttonMergePdf.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            buttonMergePdf.Location = new Point(12, 249);
+            buttonMergePdf.Name = "buttonMergePdf";
+            buttonMergePdf.Size = new Size(376, 60);
+            buttonMergePdf.TabIndex = 17;
+            buttonMergePdf.Text = "Wykonaj";
+            buttonMergePdf.UseVisualStyleBackColor = true;
+            buttonMergePdf.Click += ButtonMergePdf_Click;
             // 
             // labelFirstPdf
             // 
@@ -104,9 +93,9 @@
             labelFirstPdf.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             labelFirstPdf.Location = new Point(12, 49);
             labelFirstPdf.Name = "labelFirstPdf";
-            labelFirstPdf.Size = new Size(383, 20);
+            labelFirstPdf.Size = new Size(238, 20);
             labelFirstPdf.TabIndex = 18;
-            labelFirstPdf.Text = "Wybrany PDF: Brak - skorzystaj z poniższego przycisku";
+            labelFirstPdf.Text = "Wybierz pierwszy plik do scalenia";
             // 
             // labelSecondPdf
             // 
@@ -114,9 +103,9 @@
             labelSecondPdf.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             labelSecondPdf.Location = new Point(12, 150);
             labelSecondPdf.Name = "labelSecondPdf";
-            labelSecondPdf.Size = new Size(383, 20);
+            labelSecondPdf.Size = new Size(215, 20);
             labelSecondPdf.TabIndex = 19;
-            labelSecondPdf.Text = "Wybrany PDF: Brak - skorzystaj z poniższego przycisku";
+            labelSecondPdf.Text = "Wybierz drugi plik do scalenia";
             // 
             // Form2
             // 
@@ -124,14 +113,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(400, 329);
             ControlBox = false;
             Controls.Add(labelSecondPdf);
             Controls.Add(labelFirstPdf);
-            Controls.Add(button1);
+            Controls.Add(buttonMergePdf);
             Controls.Add(SecondPDF);
             Controls.Add(FirstPDF);
-            Controls.Add(minimizeButton);
             Controls.Add(exitButton);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
@@ -145,12 +133,10 @@
         }
 
         #endregion
-
-        private Button minimizeButton;
         private Button exitButton;
         private Button FirstPDF;
         private Button SecondPDF;
-        private Button button1;
+        private Button buttonMergePdf;
         private Label labelFirstPdf;
         private Label labelSecondPdf;
     }

@@ -179,6 +179,12 @@ namespace WWS_Trimmer
                 MessageBox.Show($"Wyst¹pi³ b³¹d podczas otwierania linku URL: {ex.Message}", "B³¹d", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
     }
 }
 
