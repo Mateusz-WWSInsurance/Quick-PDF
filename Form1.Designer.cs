@@ -44,6 +44,8 @@
             checkBoxRotateRv = new CheckBox();
             button2 = new Button();
             button4 = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -138,7 +140,7 @@
             exitButton.FlatStyle = FlatStyle.Flat;
             exitButton.ForeColor = SystemColors.ControlLightLight;
             exitButton.Image = (Image)resources.GetObject("exitButton.Image");
-            exitButton.Location = new Point(408, -1);
+            exitButton.Location = new Point(731, -1);
             exitButton.Name = "exitButton";
             exitButton.RightToLeft = RightToLeft.No;
             exitButton.Size = new Size(37, 39);
@@ -152,7 +154,7 @@
             minimizeButton.ForeColor = SystemColors.ControlLightLight;
             minimizeButton.Image = (Image)resources.GetObject("minimizeButton.Image");
             minimizeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            minimizeButton.Location = new Point(376, -1);
+            minimizeButton.Location = new Point(699, -1);
             minimizeButton.Name = "minimizeButton";
             minimizeButton.RightToLeft = RightToLeft.No;
             minimizeButton.Size = new Size(31, 39);
@@ -200,12 +202,23 @@
             button4.Text = "Zgłoś błąd";
             button4.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(458, 88);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(272, 242);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(444, 422);
+            ClientSize = new Size(771, 422);
+            Controls.Add(pictureBox1);
             Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(checkBoxRotateRv);
@@ -226,6 +239,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "WWS Trimmer";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,5 +261,6 @@
         private CheckBox checkBoxRotateRv;
         private Button button2;
         private Button button4;
+        private PictureBox pictureBox1;
     }
 }
