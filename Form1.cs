@@ -28,7 +28,7 @@ namespace WWS_Trimmer
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 inputFile = openFileDialog.FileName;
-                label5.Text = ("Wybrany PDF: ") + openFileDialog.FileName;
+                label5.Text = "Wybrany PDF: " + Path.GetFileName(openFileDialog.FileName);
             }
         }
 
@@ -42,17 +42,6 @@ namespace WWS_Trimmer
                 return;
             }
 
-            if (checkBoxRotateRv.Checked)
-            {
-                checkBoxRotateRv.Checked = false;
-                RotatePictureBox90Degrees(pictureBoxS);
-            }
-
-            if (checkBoxRotate.Checked)
-            {
-                checkBoxRotate.Checked = false;
-                RotatePictureBox90DegreesRv(pictureBoxS);
-            }
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Pliki PDF|*.pdf";
@@ -103,6 +92,17 @@ namespace WWS_Trimmer
                     }
                 }
             }
+            if (checkBoxRotateRv.Checked)
+            {
+                checkBoxRotateRv.Checked = false;
+                RotatePictureBox90Degrees(pictureBoxS);
+            }
+
+            if (checkBoxRotate.Checked)
+            {
+                checkBoxRotate.Checked = false;
+                RotatePictureBox90DegreesRv(pictureBoxS);
+            }
         }
 
 
@@ -131,6 +131,10 @@ namespace WWS_Trimmer
                 checkBoxRotate.Checked = false;
                 RotatePictureBox90DegreesRv(pictureBoxS);
             }
+            else
+            {
+                RotatePictureBox90Degrees(pictureBoxS);
+            }
         }
 
         private void checkBoxRotate_CheckedChanged(object sender, EventArgs e)
@@ -139,6 +143,10 @@ namespace WWS_Trimmer
             {
                 checkBoxRotateRv.Checked = false;
                 RotatePictureBox90Degrees(pictureBoxS);
+            }
+            else
+            {
+                RotatePictureBox90DegreesRv(pictureBoxS);
             }
         }
 
