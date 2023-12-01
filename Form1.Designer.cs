@@ -44,8 +44,9 @@
             checkBoxRotateRv = new CheckBox();
             button2 = new Button();
             button4 = new Button();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pictureBoxS = new PictureBox();
+            button5 = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxS).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -146,6 +147,7 @@
             exitButton.Size = new Size(37, 39);
             exitButton.TabIndex = 11;
             exitButton.UseVisualStyleBackColor = true;
+            exitButton.Click += exitButton_Click;
             // 
             // minimizeButton
             // 
@@ -160,6 +162,7 @@
             minimizeButton.Size = new Size(31, 39);
             minimizeButton.TabIndex = 12;
             minimizeButton.UseVisualStyleBackColor = true;
+            minimizeButton.Click += minimizeButton_Click;
             // 
             // checkBoxRotate
             // 
@@ -169,6 +172,7 @@
             checkBoxRotate.Size = new Size(135, 24);
             checkBoxRotate.TabIndex = 13;
             checkBoxRotate.Text = "Obrót o 90% ->";
+            checkBoxRotate.CheckedChanged += checkBoxRotate_CheckedChanged;
             // 
             // checkBoxRotateRv
             // 
@@ -179,12 +183,13 @@
             checkBoxRotateRv.TabIndex = 14;
             checkBoxRotateRv.Text = "Obrót o 90% <-";
             checkBoxRotateRv.UseVisualStyleBackColor = true;
+            checkBoxRotateRv.CheckedChanged += checkBoxRotateRv_CheckedChanged;
             // 
             // button2
             // 
             button2.AllowDrop = true;
             button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button2.Location = new Point(12, 381);
+            button2.Location = new Point(458, 381);
             button2.Name = "button2";
             button2.Size = new Size(150, 29);
             button2.TabIndex = 15;
@@ -195,30 +200,43 @@
             // 
             button4.AllowDrop = true;
             button4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button4.Location = new Point(282, 381);
+            button4.Location = new Point(609, 381);
             button4.Name = "button4";
             button4.Size = new Size(150, 29);
             button4.TabIndex = 16;
             button4.Text = "Zgłoś błąd";
             button4.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pictureBoxS
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(458, 88);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(272, 242);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 17;
-            pictureBox1.TabStop = false;
+            pictureBoxS.Image = (Image)resources.GetObject("pictureBoxS.Image");
+            pictureBoxS.Location = new Point(458, 88);
+            pictureBoxS.Name = "pictureBoxS";
+            pictureBoxS.Size = new Size(272, 242);
+            pictureBoxS.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxS.TabIndex = 17;
+            pictureBoxS.TabStop = false;
+            // 
+            // button5
+            // 
+            button5.AllowDrop = true;
+            button5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button5.Location = new Point(92, 366);
+            button5.Name = "button5";
+            button5.Size = new Size(259, 44);
+            button5.TabIndex = 18;
+            button5.Text = "Narzędzie do łączenia PDF";
+            button5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
+            AllowDrop = true;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(771, 422);
-            Controls.Add(pictureBox1);
+            Controls.Add(button5);
+            Controls.Add(pictureBoxS);
             Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(checkBoxRotateRv);
@@ -239,7 +257,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "WWS Trimmer";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxS).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -261,6 +279,7 @@
         private CheckBox checkBoxRotateRv;
         private Button button2;
         private Button button4;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxS;
+        private Button button5;
     }
 }

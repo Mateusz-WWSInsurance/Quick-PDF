@@ -27,7 +27,7 @@ namespace WWS_Trimmer
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 inputFile = openFileDialog.FileName;
-                label5.Text = ("Plik ") + openFileDialog.FileName;
+                label5.Text = ("Wybrany PDF: ") + openFileDialog.FileName;
             }
         }
 
@@ -39,6 +39,18 @@ namespace WWS_Trimmer
             {
                 MessageBox.Show("Najpierw wybierz plik do przyciêcia.", "B³¹d", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+
+            if (checkBoxRotateRv.Checked)
+            {
+                checkBoxRotateRv.Checked = false;
+                RotatePictureBox90Degrees(pictureBoxS);
+            }
+
+            if (checkBoxRotate.Checked)
+            {
+                checkBoxRotate.Checked = false;
+                RotatePictureBox90DegreesRv(pictureBoxS);
             }
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -92,7 +104,52 @@ namespace WWS_Trimmer
             }
         }
 
- 
+
+        private void RotatePictureBox90Degrees(PictureBox pictureBox)
+        {
+            // Obróæ obraz o 90 stopni w prawo
+            pictureBox.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+
+            // Ustaw obraz po obróceniu
+            pictureBox.Invalidate();
+        }
+
+        private void RotatePictureBox90DegreesRv(PictureBox pictureBox)
+        {
+            // Obróæ obraz o 90 stopni w prawo
+            pictureBox.Image.RotateFlip(RotateFlipType.Rotate270FlipNone);
+
+            // Ustaw obraz po obróceniu
+            pictureBox.Invalidate();
+        }
+
+        private void checkBoxRotateRv_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxRotateRv.Checked)
+            {
+                checkBoxRotate.Checked = false;
+                RotatePictureBox90DegreesRv(pictureBoxS);
+            }
+        }
+
+        private void checkBoxRotate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxRotate.Checked)
+            {
+                checkBoxRotateRv.Checked = false;
+                RotatePictureBox90Degrees(pictureBoxS);
+            }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
 
