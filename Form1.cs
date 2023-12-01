@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
@@ -149,6 +150,26 @@ namespace WWS_Trimmer
         private void minimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Tutaj ustaw adres URL, który chcesz otworzyæ
+            string url = "https://wws-insurance.pl/report";
+
+            // Otwórz link URL w domyœlnej przegl¹darce
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Wyst¹pi³ b³¹d podczas otwierania linku URL: {ex.Message}", "B³¹d", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

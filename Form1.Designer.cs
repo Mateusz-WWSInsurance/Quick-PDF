@@ -206,6 +206,7 @@
             button4.TabIndex = 16;
             button4.Text = "Zgłoś błąd";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // pictureBoxS
             // 
