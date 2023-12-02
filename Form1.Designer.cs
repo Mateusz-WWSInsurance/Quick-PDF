@@ -48,6 +48,7 @@
             button5 = new Button();
             button6 = new Button();
             label6 = new Label();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxS).BeginInit();
             SuspendLayout();
             // 
@@ -65,14 +66,14 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(165, 178);
+            textBox1.Location = new Point(169, 178);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(36, 27);
             textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(237, 178);
+            textBox2.Location = new Point(241, 178);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(36, 27);
             textBox2.TabIndex = 3;
@@ -81,7 +82,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(165, 155);
+            label1.Location = new Point(169, 155);
             label1.Name = "label1";
             label1.Size = new Size(29, 20);
             label1.TabIndex = 4;
@@ -91,7 +92,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label2.Location = new Point(244, 155);
+            label2.Location = new Point(248, 155);
             label2.Name = "label2";
             label2.Size = new Size(29, 20);
             label2.TabIndex = 5;
@@ -100,7 +101,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(212, 182);
+            label3.Location = new Point(216, 182);
             label3.Name = "label3";
             label3.Size = new Size(15, 20);
             label3.TabIndex = 6;
@@ -119,11 +120,11 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button3.Location = new Point(77, 292);
+            button3.Location = new Point(77, 249);
             button3.Name = "button3";
             button3.Size = new Size(285, 52);
             button3.TabIndex = 9;
-            button3.Text = "Przytnij";
+            button3.Text = "Przytnij / Obróć";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
@@ -169,7 +170,7 @@
             // checkBoxRotate
             // 
             checkBoxRotate.AutoSize = true;
-            checkBoxRotate.Location = new Point(248, 252);
+            checkBoxRotate.Location = new Point(248, 216);
             checkBoxRotate.Name = "checkBoxRotate";
             checkBoxRotate.Size = new Size(135, 24);
             checkBoxRotate.TabIndex = 13;
@@ -179,7 +180,7 @@
             // checkBoxRotateRv
             // 
             checkBoxRotateRv.AutoSize = true;
-            checkBoxRotateRv.Location = new Point(66, 252);
+            checkBoxRotateRv.Location = new Point(66, 216);
             checkBoxRotateRv.Name = "checkBoxRotateRv";
             checkBoxRotateRv.Size = new Size(135, 24);
             checkBoxRotateRv.TabIndex = 14;
@@ -258,6 +259,16 @@
             label6.TabIndex = 20;
             label6.Text = "Quick PDF v. 1.1.2 |  WWS Insurance";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label7.Location = new Point(152, 343);
+            label7.Name = "label7";
+            label7.Size = new Size(147, 20);
+            label7.TabIndex = 21;
+            label7.Text = "Pozostałe narzędzia";
+            // 
             // Form1
             // 
             AllowDrop = true;
@@ -265,6 +276,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(771, 514);
+            Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(button6);
             Controls.Add(button5);
@@ -316,5 +328,6 @@
         private Button button5;
         private Button button6;
         private Label label6;
+        private Label label7;
     }
 }
