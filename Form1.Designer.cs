@@ -47,6 +47,7 @@
             pictureBoxS = new PictureBox();
             button5 = new Button();
             button6 = new Button();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxS).BeginInit();
             SuspendLayout();
             // 
@@ -190,7 +191,7 @@
             // 
             button2.AllowDrop = true;
             button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button2.Location = new Point(458, 381);
+            button2.Location = new Point(453, 473);
             button2.Name = "button2";
             button2.Size = new Size(150, 29);
             button2.TabIndex = 15;
@@ -201,7 +202,7 @@
             // 
             button4.AllowDrop = true;
             button4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button4.Location = new Point(609, 381);
+            button4.Location = new Point(609, 473);
             button4.Name = "button4";
             button4.Size = new Size(150, 29);
             button4.TabIndex = 16;
@@ -223,11 +224,13 @@
             // 
             button5.AllowDrop = true;
             button5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button5.Image = (Image)resources.GetObject("button5.Image");
             button5.Location = new Point(77, 366);
             button5.Name = "button5";
-            button5.Size = new Size(135, 44);
+            button5.Size = new Size(135, 131);
             button5.TabIndex = 18;
             button5.Text = "Scalanie PDF";
+            button5.TextAlign = ContentAlignment.BottomCenter;
             button5.UseVisualStyleBackColor = true;
             button5.Click += Button5_Click;
             // 
@@ -235,13 +238,24 @@
             // 
             button6.AllowDrop = true;
             button6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button6.Image = (Image)resources.GetObject("button6.Image");
             button6.Location = new Point(228, 366);
             button6.Name = "button6";
-            button6.Size = new Size(134, 44);
+            button6.Size = new Size(134, 131);
             button6.TabIndex = 19;
             button6.Text = "Kompresja PDF";
+            button6.TextAlign = ContentAlignment.BottomCenter;
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(488, 450);
+            label6.Name = "label6";
+            label6.Size = new Size(242, 20);
+            label6.TabIndex = 20;
+            label6.Text = "Quick PDF v. 1.1.2 |  WWS Insurance";
             // 
             // Form1
             // 
@@ -249,7 +263,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(771, 422);
+            ClientSize = new Size(771, 514);
+            Controls.Add(label6);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(pictureBoxS);
@@ -273,7 +288,7 @@
             MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "WWS Trimmer";
+            Text = "Quick PDF";
             ((System.ComponentModel.ISupportInitialize)pictureBoxS).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -299,5 +314,6 @@
         private PictureBox pictureBoxS;
         private Button button5;
         private Button button6;
+        private Label label6;
     }
 }
