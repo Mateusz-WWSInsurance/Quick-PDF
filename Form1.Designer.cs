@@ -123,7 +123,7 @@
             button3.Name = "button3";
             button3.Size = new Size(285, 52);
             button3.TabIndex = 9;
-            button3.Text = "Wykonaj";
+            button3.Text = "Przytnij";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
