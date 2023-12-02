@@ -185,6 +185,12 @@ namespace WWS_Trimmer
             Form2 form2 = new Form2();
             form2.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+        }
     }
 }
 

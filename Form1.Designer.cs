@@ -46,6 +46,7 @@
             button4 = new Button();
             pictureBoxS = new PictureBox();
             button5 = new Button();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxS).BeginInit();
             SuspendLayout();
             // 
@@ -117,9 +118,9 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button3.Location = new Point(92, 292);
+            button3.Location = new Point(77, 292);
             button3.Name = "button3";
-            button3.Size = new Size(259, 52);
+            button3.Size = new Size(285, 52);
             button3.TabIndex = 9;
             button3.Text = "Wykonaj";
             button3.UseVisualStyleBackColor = true;
@@ -222,13 +223,25 @@
             // 
             button5.AllowDrop = true;
             button5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button5.Location = new Point(92, 366);
+            button5.Location = new Point(77, 366);
             button5.Name = "button5";
-            button5.Size = new Size(259, 44);
+            button5.Size = new Size(135, 44);
             button5.TabIndex = 18;
-            button5.Text = "Narzędzie do łączenia PDF";
+            button5.Text = "Łączenie PDF";
             button5.UseVisualStyleBackColor = true;
             button5.Click += Button5_Click;
+            // 
+            // button6
+            // 
+            button6.AllowDrop = true;
+            button6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button6.Location = new Point(228, 366);
+            button6.Name = "button6";
+            button6.Size = new Size(134, 44);
+            button6.TabIndex = 19;
+            button6.Text = "Kompresja PDF";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // Form1
             // 
@@ -237,6 +250,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(771, 422);
+            Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(pictureBoxS);
             Controls.Add(button4);
@@ -283,5 +297,6 @@
         private Button button4;
         private PictureBox pictureBoxS;
         private Button button5;
+        private Button button6;
     }
 }
