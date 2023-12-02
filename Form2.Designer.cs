@@ -122,12 +122,13 @@
             Controls.Add(FirstPDF);
             Controls.Add(exitButton);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form2";
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form2";
+            Text = "Scalanie PDF";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -15,10 +15,12 @@ namespace WWS_Trimmer
     {
         private string? inputFile = null;
 
+
         public Form1()
         {
             InitializeComponent();
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -92,16 +94,17 @@ namespace WWS_Trimmer
                     }
                 }
             }
+     
+
             if (checkBoxRotateRv.Checked)
             {
                 checkBoxRotateRv.Checked = false;
-                RotatePictureBox90Degrees(pictureBoxS);
             }
 
             if (checkBoxRotate.Checked)
             {
                 checkBoxRotate.Checked = false;
-                RotatePictureBox90DegreesRv(pictureBoxS);
+
             }
         }
 
@@ -109,19 +112,19 @@ namespace WWS_Trimmer
         private void RotatePictureBox90Degrees(PictureBox pictureBox)
         {
             // Obróæ obraz o 90 stopni w prawo
-            pictureBox.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            pictureBoxS.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
 
             // Ustaw obraz po obróceniu
-            pictureBox.Invalidate();
+            pictureBoxS.Invalidate();
         }
 
         private void RotatePictureBox90DegreesRv(PictureBox pictureBox)
         {
             // Obróæ obraz o 90 stopni w prawo
-            pictureBox.Image.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            pictureBoxS.Image.RotateFlip(RotateFlipType.Rotate270FlipNone);
 
             // Ustaw obraz po obróceniu
-            pictureBox.Invalidate();
+            pictureBoxS.Invalidate();
         }
 
         private void checkBoxRotateRv_CheckedChanged(object sender, EventArgs e)

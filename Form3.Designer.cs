@@ -120,9 +120,11 @@
             Controls.Add(chooseFileButton);
             Controls.Add(exitButton);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form3";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form3";
+            Text = "Kompresowanie PDF";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -227,7 +227,7 @@
             button5.Name = "button5";
             button5.Size = new Size(135, 44);
             button5.TabIndex = 18;
-            button5.Text = "Łączenie PDF";
+            button5.Text = "Scalanie PDF";
             button5.UseVisualStyleBackColor = true;
             button5.Click += Button5_Click;
             // 
@@ -269,6 +269,7 @@
             Controls.Add(textBox1);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
