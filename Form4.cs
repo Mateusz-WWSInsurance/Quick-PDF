@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,21 @@ namespace WWS_Trimmer
 
         private void chooseFileButton_Click(object sender, EventArgs e)
         {
+            string url = "https://github.com/Mateusz-WWSInsurance/Quick-PDF";
 
+            // Otwórz link URL w domyślnej przeglądarce
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Wystąpił błąd podczas otwierania linku URL: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

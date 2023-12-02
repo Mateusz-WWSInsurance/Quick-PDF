@@ -197,6 +197,7 @@
             button2.TabIndex = 15;
             button2.Text = "O programie";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button4
             // 
