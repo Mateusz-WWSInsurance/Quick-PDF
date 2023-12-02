@@ -260,7 +260,7 @@
             label6.Name = "label6";
             label6.Size = new Size(242, 20);
             label6.TabIndex = 20;
-            label6.Text = "Quick PDF v. 1.1.2 |  WWS Insurance";
+            label6.Text = "Quick PDF v. 1.2.1 |  WWS Insurance";
             // 
             // label7
             // 

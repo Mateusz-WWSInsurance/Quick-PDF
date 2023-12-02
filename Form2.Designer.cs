@@ -57,7 +57,7 @@
             // 
             FirstPDF.AllowDrop = true;
             FirstPDF.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            FirstPDF.Location = new Point(12, 72);
+            FirstPDF.Location = new Point(12, 79);
             FirstPDF.Name = "FirstPDF";
             FirstPDF.Size = new Size(150, 29);
             FirstPDF.TabIndex = 15;
@@ -69,7 +69,7 @@
             // 
             SecondPDF.AllowDrop = true;
             SecondPDF.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            SecondPDF.Location = new Point(12, 173);
+            SecondPDF.Location = new Point(12, 180);
             SecondPDF.Name = "SecondPDF";
             SecondPDF.Size = new Size(150, 29);
             SecondPDF.TabIndex = 16;
@@ -81,7 +81,7 @@
             // 
             buttonMergePdf.AllowDrop = true;
             buttonMergePdf.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            buttonMergePdf.Location = new Point(12, 249);
+            buttonMergePdf.Location = new Point(12, 256);
             buttonMergePdf.Name = "buttonMergePdf";
             buttonMergePdf.Size = new Size(376, 60);
             buttonMergePdf.TabIndex = 17;
@@ -93,7 +93,7 @@
             // 
             labelFirstPdf.AutoSize = true;
             labelFirstPdf.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            labelFirstPdf.Location = new Point(12, 49);
+            labelFirstPdf.Location = new Point(12, 56);
             labelFirstPdf.Name = "labelFirstPdf";
             labelFirstPdf.Size = new Size(238, 20);
             labelFirstPdf.TabIndex = 18;
@@ -103,7 +103,7 @@
             // 
             labelSecondPdf.AutoSize = true;
             labelSecondPdf.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            labelSecondPdf.Location = new Point(12, 150);
+            labelSecondPdf.Location = new Point(12, 157);
             labelSecondPdf.Name = "labelSecondPdf";
             labelSecondPdf.Size = new Size(215, 20);
             labelSecondPdf.TabIndex = 19;
@@ -137,7 +137,6 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form2";
-            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Scalanie PDF";
             ResumeLayout(false);

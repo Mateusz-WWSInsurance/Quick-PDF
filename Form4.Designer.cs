@@ -128,7 +128,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form4";
-            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "O programie";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
