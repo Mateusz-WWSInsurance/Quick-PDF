@@ -34,27 +34,31 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            pictureBox1 = new PictureBox();
+            panel1 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // exitButton
             // 
+            exitButton.BackColor = Color.WhiteSmoke;
             exitButton.BackgroundImageLayout = ImageLayout.Zoom;
             exitButton.FlatStyle = FlatStyle.Flat;
-            exitButton.ForeColor = SystemColors.ControlLightLight;
+            exitButton.ForeColor = Color.WhiteSmoke;
             exitButton.Image = (Image)resources.GetObject("exitButton.Image");
-            exitButton.Location = new Point(511, 0);
+            exitButton.Location = new Point(511, -3);
             exitButton.Name = "exitButton";
             exitButton.RightToLeft = RightToLeft.No;
             exitButton.Size = new Size(37, 39);
             exitButton.TabIndex = 13;
-            exitButton.UseVisualStyleBackColor = true;
+            exitButton.UseVisualStyleBackColor = false;
             exitButton.Click += exitButton_Click;
             // 
             // chooseFileButton
             // 
             chooseFileButton.AllowDrop = true;
             chooseFileButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            chooseFileButton.Location = new Point(12, 188);
+            chooseFileButton.Location = new Point(12, 240);
             chooseFileButton.Name = "chooseFileButton";
             chooseFileButton.Size = new Size(150, 29);
             chooseFileButton.TabIndex = 14;
@@ -89,23 +93,45 @@
             label3.TabIndex = 17;
             label3.Text = "kodu źródłowego w celu użytku komercyjnego.";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(147, 137);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(243, 97);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 18;
+            pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.WhiteSmoke;
+            panel1.Location = new Point(-2, -2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(555, 39);
+            panel1.TabIndex = 25;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(551, 229);
+            ClientSize = new Size(551, 283);
+            Controls.Add(pictureBox1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(chooseFileButton);
             Controls.Add(exitButton);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form4";
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "O programie";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -117,5 +143,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private PictureBox pictureBox1;
+        private Panel panel1;
     }
 }

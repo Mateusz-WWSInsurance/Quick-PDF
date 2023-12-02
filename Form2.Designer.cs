@@ -35,20 +35,22 @@
             buttonMergePdf = new Button();
             labelFirstPdf = new Label();
             labelSecondPdf = new Label();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // exitButton
             // 
+            exitButton.BackColor = Color.WhiteSmoke;
             exitButton.BackgroundImageLayout = ImageLayout.Zoom;
             exitButton.FlatStyle = FlatStyle.Flat;
-            exitButton.ForeColor = SystemColors.ControlLightLight;
+            exitButton.ForeColor = Color.WhiteSmoke;
             exitButton.Image = (Image)resources.GetObject("exitButton.Image");
-            exitButton.Location = new Point(360, 2);
+            exitButton.Location = new Point(360, 0);
             exitButton.Name = "exitButton";
             exitButton.RightToLeft = RightToLeft.No;
-            exitButton.Size = new Size(37, 39);
+            exitButton.Size = new Size(37, 36);
             exitButton.TabIndex = 13;
-            exitButton.UseVisualStyleBackColor = true;
+            exitButton.UseVisualStyleBackColor = false;
             exitButton.Click += exitButton_Click;
             // 
             // FirstPDF
@@ -107,13 +109,21 @@
             labelSecondPdf.TabIndex = 19;
             labelSecondPdf.Text = "Wybierz drugi plik do scalenia";
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.WhiteSmoke;
+            panel1.Location = new Point(-4, -1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(410, 39);
+            panel1.TabIndex = 23;
+            // 
             // Form2
             // 
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(400, 329);
+            ClientSize = new Size(399, 329);
             ControlBox = false;
             Controls.Add(labelSecondPdf);
             Controls.Add(labelFirstPdf);
@@ -121,6 +131,7 @@
             Controls.Add(SecondPDF);
             Controls.Add(FirstPDF);
             Controls.Add(exitButton);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -140,5 +151,6 @@
         private Button buttonMergePdf;
         private Label labelFirstPdf;
         private Label labelSecondPdf;
+        private Panel panel1;
     }
 }

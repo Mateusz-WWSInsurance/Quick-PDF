@@ -49,6 +49,7 @@
             button6 = new Button();
             label6 = new Label();
             label7 = new Label();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBoxS).BeginInit();
             SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // 
             button1.AllowDrop = true;
             button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button1.Location = new Point(149, 66);
+            button1.Location = new Point(149, 77);
             button1.Name = "button1";
             button1.Size = new Size(150, 29);
             button1.TabIndex = 0;
@@ -66,14 +67,14 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(169, 178);
+            textBox1.Location = new Point(169, 189);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(36, 27);
             textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(241, 178);
+            textBox2.Location = new Point(241, 189);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(36, 27);
             textBox2.TabIndex = 3;
@@ -82,7 +83,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(169, 155);
+            label1.Location = new Point(169, 166);
             label1.Name = "label1";
             label1.Size = new Size(29, 20);
             label1.TabIndex = 4;
@@ -92,7 +93,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label2.Location = new Point(248, 155);
+            label2.Location = new Point(248, 166);
             label2.Name = "label2";
             label2.Size = new Size(29, 20);
             label2.TabIndex = 5;
@@ -101,7 +102,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(216, 182);
+            label3.Location = new Point(216, 193);
             label3.Name = "label3";
             label3.Size = new Size(15, 20);
             label3.TabIndex = 6;
@@ -111,7 +112,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label4.Location = new Point(127, 122);
+            label4.Location = new Point(127, 133);
             label4.Name = "label4";
             label4.Size = new Size(190, 20);
             label4.TabIndex = 7;
@@ -120,7 +121,7 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button3.Location = new Point(77, 249);
+            button3.Location = new Point(77, 260);
             button3.Name = "button3";
             button3.Size = new Size(285, 52);
             button3.TabIndex = 9;
@@ -132,7 +133,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label5.Location = new Point(12, 39);
+            label5.Location = new Point(12, 50);
             label5.Name = "label5";
             label5.Size = new Size(383, 20);
             label5.TabIndex = 10;
@@ -140,37 +141,39 @@
             // 
             // exitButton
             // 
+            exitButton.BackColor = Color.WhiteSmoke;
             exitButton.BackgroundImageLayout = ImageLayout.Zoom;
             exitButton.FlatStyle = FlatStyle.Flat;
-            exitButton.ForeColor = SystemColors.ControlLightLight;
+            exitButton.ForeColor = Color.WhiteSmoke;
             exitButton.Image = (Image)resources.GetObject("exitButton.Image");
-            exitButton.Location = new Point(731, -1);
+            exitButton.Location = new Point(731, -2);
             exitButton.Name = "exitButton";
             exitButton.RightToLeft = RightToLeft.No;
-            exitButton.Size = new Size(37, 39);
+            exitButton.Size = new Size(37, 35);
             exitButton.TabIndex = 11;
-            exitButton.UseVisualStyleBackColor = true;
+            exitButton.UseVisualStyleBackColor = false;
             exitButton.Click += exitButton_Click;
             // 
             // minimizeButton
             // 
+            minimizeButton.BackColor = Color.WhiteSmoke;
             minimizeButton.BackgroundImageLayout = ImageLayout.Zoom;
             minimizeButton.FlatStyle = FlatStyle.Flat;
-            minimizeButton.ForeColor = SystemColors.ControlLightLight;
+            minimizeButton.ForeColor = Color.WhiteSmoke;
             minimizeButton.Image = (Image)resources.GetObject("minimizeButton.Image");
             minimizeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            minimizeButton.Location = new Point(699, -1);
+            minimizeButton.Location = new Point(699, -2);
             minimizeButton.Name = "minimizeButton";
             minimizeButton.RightToLeft = RightToLeft.No;
-            minimizeButton.Size = new Size(31, 39);
+            minimizeButton.Size = new Size(31, 35);
             minimizeButton.TabIndex = 12;
-            minimizeButton.UseVisualStyleBackColor = true;
+            minimizeButton.UseVisualStyleBackColor = false;
             minimizeButton.Click += minimizeButton_Click;
             // 
             // checkBoxRotate
             // 
             checkBoxRotate.AutoSize = true;
-            checkBoxRotate.Location = new Point(248, 216);
+            checkBoxRotate.Location = new Point(248, 227);
             checkBoxRotate.Name = "checkBoxRotate";
             checkBoxRotate.Size = new Size(135, 24);
             checkBoxRotate.TabIndex = 13;
@@ -180,7 +183,7 @@
             // checkBoxRotateRv
             // 
             checkBoxRotateRv.AutoSize = true;
-            checkBoxRotateRv.Location = new Point(66, 216);
+            checkBoxRotateRv.Location = new Point(66, 227);
             checkBoxRotateRv.Name = "checkBoxRotateRv";
             checkBoxRotateRv.Size = new Size(135, 24);
             checkBoxRotateRv.TabIndex = 14;
@@ -192,7 +195,7 @@
             // 
             button2.AllowDrop = true;
             button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button2.Location = new Point(453, 473);
+            button2.Location = new Point(453, 484);
             button2.Name = "button2";
             button2.Size = new Size(150, 29);
             button2.TabIndex = 15;
@@ -204,7 +207,7 @@
             // 
             button4.AllowDrop = true;
             button4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button4.Location = new Point(609, 473);
+            button4.Location = new Point(609, 484);
             button4.Name = "button4";
             button4.Size = new Size(150, 29);
             button4.TabIndex = 16;
@@ -215,7 +218,7 @@
             // pictureBoxS
             // 
             pictureBoxS.Image = (Image)resources.GetObject("pictureBoxS.Image");
-            pictureBoxS.Location = new Point(458, 88);
+            pictureBoxS.Location = new Point(458, 99);
             pictureBoxS.Name = "pictureBoxS";
             pictureBoxS.Size = new Size(272, 242);
             pictureBoxS.SizeMode = PictureBoxSizeMode.Zoom;
@@ -227,7 +230,7 @@
             button5.AllowDrop = true;
             button5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(77, 366);
+            button5.Location = new Point(77, 377);
             button5.Name = "button5";
             button5.Size = new Size(135, 131);
             button5.TabIndex = 18;
@@ -241,7 +244,7 @@
             button6.AllowDrop = true;
             button6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.Location = new Point(228, 366);
+            button6.Location = new Point(228, 377);
             button6.Name = "button6";
             button6.Size = new Size(134, 131);
             button6.TabIndex = 19;
@@ -253,7 +256,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(488, 450);
+            label6.Location = new Point(488, 461);
             label6.Name = "label6";
             label6.Size = new Size(242, 20);
             label6.TabIndex = 20;
@@ -263,11 +266,19 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label7.Location = new Point(152, 343);
+            label7.Location = new Point(152, 354);
             label7.Name = "label7";
             label7.Size = new Size(147, 20);
             label7.TabIndex = 21;
             label7.Text = "Pozostałe narzędzia";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.WhiteSmoke;
+            panel1.Location = new Point(-4, -3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(783, 39);
+            panel1.TabIndex = 22;
             // 
             // Form1
             // 
@@ -275,7 +286,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(771, 514);
+            ClientSize = new Size(771, 521);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(button6);
@@ -296,6 +307,7 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(button1);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -329,5 +341,6 @@
         private Button button6;
         private Label label6;
         private Label label7;
+        private Panel panel1;
     }
 }

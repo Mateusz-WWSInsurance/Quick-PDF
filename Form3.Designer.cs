@@ -35,20 +35,22 @@
             maxCompressButton = new Button();
             label1 = new Label();
             label2 = new Label();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // exitButton
             // 
+            exitButton.BackColor = Color.WhiteSmoke;
             exitButton.BackgroundImageLayout = ImageLayout.Zoom;
             exitButton.FlatStyle = FlatStyle.Flat;
-            exitButton.ForeColor = SystemColors.ControlLightLight;
+            exitButton.ForeColor = Color.WhiteSmoke;
             exitButton.Image = (Image)resources.GetObject("exitButton.Image");
-            exitButton.Location = new Point(229, -1);
+            exitButton.Location = new Point(229, -3);
             exitButton.Name = "exitButton";
             exitButton.RightToLeft = RightToLeft.No;
             exitButton.Size = new Size(37, 39);
             exitButton.TabIndex = 12;
-            exitButton.UseVisualStyleBackColor = true;
+            exitButton.UseVisualStyleBackColor = false;
             exitButton.Click += exitButton_Click;
             // 
             // chooseFileButton
@@ -107,6 +109,14 @@
             label2.TabIndex = 17;
             label2.Text = "Wybrany PDF:";
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.WhiteSmoke;
+            panel1.Location = new Point(-2, -2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(277, 39);
+            panel1.TabIndex = 24;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -119,6 +129,7 @@
             Controls.Add(compressButton);
             Controls.Add(chooseFileButton);
             Controls.Add(exitButton);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form3";
@@ -137,5 +148,6 @@
         private Button maxCompressButton;
         private Label label1;
         private Label label2;
+        private Panel panel1;
     }
 }
