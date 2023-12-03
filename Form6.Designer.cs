@@ -66,28 +66,28 @@
             // checkBoxRotateRv
             // 
             checkBoxRotateRv.AutoSize = true;
-            checkBoxRotateRv.Location = new Point(15, 167);
+            checkBoxRotateRv.Location = new Point(12, 167);
             checkBoxRotateRv.Name = "checkBoxRotateRv";
-            checkBoxRotateRv.Size = new Size(135, 24);
+            checkBoxRotateRv.Size = new Size(380, 24);
             checkBoxRotateRv.TabIndex = 29;
-            checkBoxRotateRv.Text = "Obrót o 90% <-";
+            checkBoxRotateRv.Text = "Obrót o 90% w ruchu przeciwnym wskazówek zegara";
             checkBoxRotateRv.UseVisualStyleBackColor = true;
             checkBoxRotateRv.CheckedChanged += checkBoxRotateRv_CheckedChanged;
             // 
             // checkBoxRotate
             // 
             checkBoxRotate.AutoSize = true;
-            checkBoxRotate.Location = new Point(197, 167);
+            checkBoxRotate.Location = new Point(12, 137);
             checkBoxRotate.Name = "checkBoxRotate";
-            checkBoxRotate.Size = new Size(135, 24);
+            checkBoxRotate.Size = new Size(329, 24);
             checkBoxRotate.TabIndex = 28;
-            checkBoxRotate.Text = "Obrót o 90% ->";
+            checkBoxRotate.Text = "Obrót o 90% zg. z ruchem wskazówek zegara";
             checkBoxRotate.CheckedChanged += checkBoxRotate_CheckedChanged;
             // 
             // button3
             // 
             button3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button3.Location = new Point(26, 200);
+            button3.Location = new Point(33, 226);
             button3.Name = "button3";
             button3.Size = new Size(285, 52);
             button3.TabIndex = 27;
@@ -144,6 +144,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form6";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form6";
             ((System.ComponentModel.ISupportInitialize)pictureBoxS).EndInit();
             ResumeLayout(false);

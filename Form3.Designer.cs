@@ -45,7 +45,7 @@
             exitButton.FlatStyle = FlatStyle.Flat;
             exitButton.ForeColor = Color.WhiteSmoke;
             exitButton.Image = (Image)resources.GetObject("exitButton.Image");
-            exitButton.Location = new Point(305, -3);
+            exitButton.Location = new Point(364, -3);
             exitButton.Name = "exitButton";
             exitButton.RightToLeft = RightToLeft.No;
             exitButton.Size = new Size(37, 39);
@@ -57,7 +57,7 @@
             // 
             chooseFileButton.AllowDrop = true;
             chooseFileButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            chooseFileButton.Location = new Point(93, 94);
+            chooseFileButton.Location = new Point(126, 95);
             chooseFileButton.Name = "chooseFileButton";
             chooseFileButton.Size = new Size(150, 29);
             chooseFileButton.TabIndex = 13;
@@ -69,7 +69,7 @@
             // 
             compressButton.AllowDrop = true;
             compressButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            compressButton.Location = new Point(47, 188);
+            compressButton.Location = new Point(75, 193);
             compressButton.Name = "compressButton";
             compressButton.Size = new Size(108, 49);
             compressButton.TabIndex = 14;
@@ -81,7 +81,7 @@
             // 
             maxCompressButton.AllowDrop = true;
             maxCompressButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            maxCompressButton.Location = new Point(189, 188);
+            maxCompressButton.Location = new Point(217, 193);
             maxCompressButton.Name = "maxCompressButton";
             maxCompressButton.Size = new Size(108, 49);
             maxCompressButton.TabIndex = 15;
@@ -93,7 +93,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(74, 154);
+            label1.Location = new Point(108, 153);
             label1.Name = "label1";
             label1.Size = new Size(183, 20);
             label1.TabIndex = 16;
@@ -105,16 +105,16 @@
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label2.Location = new Point(12, 50);
             label2.Name = "label2";
-            label2.Size = new Size(107, 20);
+            label2.Size = new Size(383, 20);
             label2.TabIndex = 17;
-            label2.Text = "Wybrany PDF:";
+            label2.Text = "Wybrany PDF: Brak - skorzystaj z poniższego przycisku";
             // 
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;
             panel1.Location = new Point(-2, -2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(353, 39);
+            panel1.Size = new Size(413, 39);
             panel1.TabIndex = 24;
             // 
             // Form3
@@ -122,7 +122,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(345, 254);
+            ClientSize = new Size(405, 254);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(maxCompressButton);

@@ -75,12 +75,19 @@ namespace WWS_Trimmer
                 return;
             }
 
-            string outputPath = GetOutputPath("quickPDF_compressed");
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Pliki PDF|*.pdf";
+            saveFileDialog.FileName = Path.GetFileNameWithoutExtension(inputFile) + "_quickPDF_compressed.pdf";
 
-            CompressPdf(inputFile, outputPath);
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string outputPath = saveFileDialog.FileName;
 
-            MessageBox.Show("Plik PDF został skompresowany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            label2.Text = " ";
+                CompressPdf(inputFile, outputPath);
+
+                MessageBox.Show("Plik PDF został skompresowany i zapisany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                label2.Text = " ";
+            }
         }
 
         private void maxCompressButton_Click(object sender, EventArgs e)
@@ -91,12 +98,19 @@ namespace WWS_Trimmer
                 return;
             }
 
-            string outputPath = GetOutputPath("quickPDF_compressed");
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Pliki PDF|*.pdf";
+            saveFileDialog.FileName = Path.GetFileNameWithoutExtension(inputFile) + "_quickPDF_maxCompressed.pdf";
 
-            MaxCompressPdf(inputFile, outputPath);
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string outputPath = saveFileDialog.FileName;
 
-            MessageBox.Show("Plik PDF został skompresowany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            label2.Text = " ";
+                MaxCompressPdf(inputFile, outputPath);
+
+                MessageBox.Show("Plik PDF został skompresowany i zapisany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                label2.Text = " ";
+            }
         }
 
         private string GetOutputPath(string suffix)
