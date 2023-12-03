@@ -27,7 +27,42 @@ namespace WWS_Trimmer
             this.panel1.MouseDown += new MouseEventHandler(Panel1_MouseDown);
             this.panel1.MouseMove += new MouseEventHandler(Panel1_MouseMove);
             this.panel1.MouseUp += new MouseEventHandler(Panel1_MouseUp);
+
+            // Dodaj obsługę zdarzeń dla przeciągania plików na formularz
+            this.AllowDrop = true;
+            this.DragDrop += new DragEventHandler(Form3_DragDrop);
+            this.DragEnter += new DragEventHandler(Form3_DragEnter);
         }
+
+        private void Form3_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        // Obsługa zdarzenia upuszczenia pliku na formularz
+        private void Form3_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            if (files.Length > 0)
+            {
+                string filePath = files[0];
+
+                if (Path.GetExtension(filePath).Equals(".pdf", StringComparison.OrdinalIgnoreCase))
+                {
+                    inputFile = filePath;
+                    label2.Text = "Wybrany PDF: " + Path.GetFileName(filePath);
+                }
+                else
+                {
+                    MessageBox.Show("Proszę przeciągnąć tylko pliki PDF.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
 
         private void Panel1_MouseDown(object sender, MouseEventArgs e)
         {

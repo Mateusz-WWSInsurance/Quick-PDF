@@ -101,7 +101,7 @@
             button5.AllowDrop = true;
             button5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(92, 124);
+            button5.Location = new Point(94, 124);
             button5.Name = "button5";
             button5.Size = new Size(160, 160);
             button5.TabIndex = 18;
@@ -115,7 +115,7 @@
             button6.AllowDrop = true;
             button6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.Location = new Point(92, 305);
+            button6.Location = new Point(94, 305);
             button6.Name = "button6";
             button6.Size = new Size(160, 160);
             button6.TabIndex = 19;
@@ -137,7 +137,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label7.Location = new Point(162, 60);
+            label7.Location = new Point(163, 60);
             label7.Name = "label7";
             label7.Size = new Size(217, 38);
             label7.TabIndex = 21;
@@ -156,7 +156,7 @@
             button7.AllowDrop = true;
             button7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button7.Image = (Image)resources.GetObject("button7.Image");
-            button7.Location = new Point(273, 124);
+            button7.Location = new Point(275, 124);
             button7.Name = "button7";
             button7.Size = new Size(160, 160);
             button7.TabIndex = 23;
@@ -170,7 +170,7 @@
             button8.AllowDrop = true;
             button8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button8.Image = (Image)resources.GetObject("button8.Image");
-            button8.Location = new Point(273, 305);
+            button8.Location = new Point(275, 305);
             button8.Name = "button8";
             button8.Size = new Size(160, 160);
             button8.TabIndex = 24;

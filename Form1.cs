@@ -24,6 +24,7 @@ namespace WWS_Trimmer
             this.panel1.MouseDown += new MouseEventHandler(Panel1_MouseDown);
             this.panel1.MouseMove += new MouseEventHandler(Panel1_MouseMove);
             this.panel1.MouseUp += new MouseEventHandler(Panel1_MouseUp);
+
         }
 
         private void Panel1_MouseDown(object sender, MouseEventArgs e)
