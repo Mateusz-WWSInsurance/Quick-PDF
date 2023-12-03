@@ -1,3 +1,13 @@
+ï»¿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -7,18 +17,16 @@ using iText.Layout;
 using iText.Layout.Element;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-
-
 namespace WWS_Trimmer
 {
-    public partial class Form1 : Form
+    public partial class Form6 : Form
     {
         private string? inputFile = null;
         private Point mouseOffset;
         private bool isMouseDown = false;
 
 
-        public Form1()
+        public Form6()
         {
             InitializeComponent();
             this.panel1.MouseDown += new MouseEventHandler(Panel1_MouseDown);
@@ -52,6 +60,7 @@ namespace WWS_Trimmer
                 isMouseDown = false;
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -66,18 +75,18 @@ namespace WWS_Trimmer
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // SprawdŸ, czy textboxy s¹ uzupe³nione
+            // SprawdÅº, czy textboxy sÄ… uzupeÅ‚nione
 
             if (string.IsNullOrEmpty(inputFile))
             {
-                MessageBox.Show("Najpierw wybierz plik do przyciêcia.", "B³¹d", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Najpierw wybierz plik.", "BÅ‚Ä…d", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Pliki PDF|*.pdf";
-            saveFileDialog.Title = "Wybierz miejsce do zapisu przyciêtego pliku";
+            saveFileDialog.Title = "Wybierz miejsce do zapisu pliku";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -92,19 +101,13 @@ namespace WWS_Trimmer
                             var document = new Document(pdfDocument);
 
 
-                            // Iteruj przez strony i usuñ te spoza zakresu
+                            // Iteruj przez strony i usuÅ„ te spoza zakresu
                             for (int i = pdfDocument.GetNumberOfPages(); i > 0; i--)
                             {
                                 var page = pdfDocument.GetPage(i);
 
-                                int startPage = string.IsNullOrEmpty(textBox1.Text) ? 1 : int.Parse(textBox1.Text);
-                                int endPage = string.IsNullOrEmpty(textBox2.Text) ? pdfDocument.GetNumberOfPages() : int.Parse(textBox2.Text);
 
-                                if (i < startPage || i > endPage)
-                                {
-                                    pdfDocument.RemovePage(i);
-                                }
-                                else if (checkBoxRotate.Checked)
+                                if (checkBoxRotate.Checked)
                                 {
                                     if (page != null)
                                     {
@@ -119,7 +122,7 @@ namespace WWS_Trimmer
 
                             }
 
-                            MessageBox.Show("Plik PDF zosta³ zapisany");
+                            MessageBox.Show("Plik PDF zostaÅ‚ zapisany");
                         }
                     }
                 }
@@ -141,19 +144,19 @@ namespace WWS_Trimmer
 
         private void RotatePictureBox90Degrees(PictureBox pictureBox)
         {
-            // Obróæ obraz o 90 stopni w prawo
+            // ObrÃ³Ä‡ obraz o 90 stopni w prawo
             pictureBoxS.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
 
-            // Ustaw obraz po obróceniu
+            // Ustaw obraz po obrÃ³ceniu
             pictureBoxS.Invalidate();
         }
 
         private void RotatePictureBox90DegreesRv(PictureBox pictureBox)
         {
-            // Obróæ obraz o 90 stopni w prawo
+            // ObrÃ³Ä‡ obraz o 90 stopni w prawo
             pictureBoxS.Image.RotateFlip(RotateFlipType.Rotate270FlipNone);
 
-            // Ustaw obraz po obróceniu
+            // Ustaw obraz po obrÃ³ceniu
             pictureBoxS.Invalidate();
         }
 
@@ -185,63 +188,8 @@ namespace WWS_Trimmer
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
-        private void minimizeButton_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            // Tutaj ustaw adres URL, który chcesz otworzyæ
-            string url = "https://wws-insurance.pl/report";
-
-            // Otwórz link URL w domyœlnej przegl¹darce
-            try
-            {
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = url,
-                    UseShellExecute = true
-                });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Wyst¹pi³ b³¹d podczas otwierania linku URL: {ex.Message}", "B³¹d", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Form3 form3 = new Form3();
-            form3.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form4 form4 = new Form4();
-            form4.Show();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Form5 form5 = new Form5();
-            form5.Show();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Form6 form6 = new Form6();
-            form6.Show();
-        }
     }
 }
-

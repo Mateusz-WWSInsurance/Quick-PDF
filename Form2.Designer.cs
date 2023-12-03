@@ -85,7 +85,7 @@
             buttonMergePdf.Name = "buttonMergePdf";
             buttonMergePdf.Size = new Size(376, 60);
             buttonMergePdf.TabIndex = 17;
-            buttonMergePdf.Text = "Wykonaj";
+            buttonMergePdf.Text = "Scal";
             buttonMergePdf.UseVisualStyleBackColor = true;
             buttonMergePdf.Click += ButtonMergePdf_Click;
             // 

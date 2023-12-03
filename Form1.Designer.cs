@@ -50,6 +50,8 @@
             label6 = new Label();
             label7 = new Label();
             panel1 = new Panel();
+            button7 = new Button();
+            button8 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxS).BeginInit();
             SuspendLayout();
             // 
@@ -157,11 +159,10 @@
             // minimizeButton
             // 
             minimizeButton.BackColor = Color.WhiteSmoke;
-            minimizeButton.BackgroundImageLayout = ImageLayout.Zoom;
+            minimizeButton.BackgroundImageLayout = ImageLayout.None;
             minimizeButton.FlatStyle = FlatStyle.Flat;
             minimizeButton.ForeColor = Color.WhiteSmoke;
             minimizeButton.Image = (Image)resources.GetObject("minimizeButton.Image");
-            minimizeButton.ImageAlign = ContentAlignment.MiddleLeft;
             minimizeButton.Location = new Point(699, -2);
             minimizeButton.Name = "minimizeButton";
             minimizeButton.RightToLeft = RightToLeft.No;
@@ -280,13 +281,43 @@
             panel1.Size = new Size(783, 39);
             panel1.TabIndex = 22;
             // 
+            // button7
+            // 
+            button7.AllowDrop = true;
+            button7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button7.Image = (Image)resources.GetObject("button7.Image");
+            button7.Location = new Point(77, 523);
+            button7.Name = "button7";
+            button7.Size = new Size(135, 131);
+            button7.TabIndex = 23;
+            button7.Text = "Wycinanie PDF";
+            button7.TextAlign = ContentAlignment.BottomCenter;
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button8
+            // 
+            button8.AllowDrop = true;
+            button8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button8.Image = (Image)resources.GetObject("button8.Image");
+            button8.Location = new Point(228, 523);
+            button8.Name = "button8";
+            button8.Size = new Size(135, 131);
+            button8.TabIndex = 24;
+            button8.Text = "Obracanie PDF";
+            button8.TextAlign = ContentAlignment.BottomCenter;
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
             // Form1
             // 
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(771, 521);
+            ClientSize = new Size(771, 741);
+            Controls.Add(button8);
+            Controls.Add(button7);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(button6);
@@ -342,5 +373,7 @@
         private Label label6;
         private Label label7;
         private Panel panel1;
+        private Button button7;
+        private Button button8;
     }
 }
