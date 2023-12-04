@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,8 +18,10 @@ namespace WWS_Trimmer
     {
         private const string FirebaseUrl = "https://quick-pdf-auth-default-rtdb.europe-west1.firebasedatabase.app/";
         private const string ActivationCodeNode = "activationCode";
+        private const string UpdateCodeNode = "updateCode";
         private readonly FirebaseClient firebaseClient = new FirebaseClient(FirebaseUrl);
         private const string ExpectedActivationCode = "512325468";
+        private const string UpdateAvailableCode = "1"; // jeśli jest aktualizacja zmienić kod w firebase na 1, w nowej apce zmienić kod tutaj w visual na 2
         public Form7()
         {
             InitializeComponent();
@@ -30,7 +34,7 @@ namespace WWS_Trimmer
         {
             
             DialogResult result = MessageBox.Show(
-                "Nie można zautoryzować twojej wersji aplikacji, skontaktuj się z WWS Insurance",
+                "Nie można zautoryzować twojej wersji aplikacji, sprawdź połączenie z internetem lub skontaktuj się z WWS Insurance",
                 "Błąd autoryzacji",
                 MessageBoxButtons.OK, 
                 MessageBoxIcon.Error 
@@ -44,6 +48,7 @@ namespace WWS_Trimmer
             }
         }
 
+        
         // Uwaga! Kod odpowiadajacy za weryfikację aktualizacji z bazą danych WWS Insurance jest ukryty na potrzeby opubblikowania pozostałego kodu źródłowego w GitHub
         private async void Timer1_Tick(object sender, EventArgs e)
         {
@@ -51,6 +56,12 @@ namespace WWS_Trimmer
 
             // Sprawdzanie kodu w Firebase
             string firebaseActivationCode = await GetFirebaseActivationCode();
+            string firebaseUpdateCode = await GetFirebaseUpdateCode();
+
+            if (string.Equals(firebaseUpdateCode, UpdateAvailableCode, StringComparison.OrdinalIgnoreCase))
+            {
+                ShowUpdateMessageBox();
+            }
 
             if (string.Equals(firebaseActivationCode, ExpectedActivationCode, StringComparison.OrdinalIgnoreCase))
             {
@@ -59,6 +70,8 @@ namespace WWS_Trimmer
                 mainForm.ShowDialog();
                 Close();
             }
+
+
             else
             {
                 ShowExitMessageBox();
@@ -67,10 +80,47 @@ namespace WWS_Trimmer
             
         }
 
+        private void ShowUpdateMessageBox()
+        {
+            DialogResult result = MessageBox.Show(
+                "Dostępna jest nowa wersja aplikacji. Czy chcesz ją pobrać?",
+                "Nowa aktualizacja",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information
+            );
+
+        
+            if (result == DialogResult.Yes)
+            {
+
+                try
+                {
+                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    {
+                        FileName = "https://wws-insurance.pl/quickpdf",
+                        UseShellExecute = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Błąd otwierania linku: {ex.Message}");
+                }
+
+            }
+        }
         private async Task<string> GetFirebaseActivationCode()
         {
             var activationCodeSnapshot = await firebaseClient
                 .Child(ActivationCodeNode)
+                .OnceSingleAsync<string>();
+
+            return activationCodeSnapshot ?? string.Empty;
+        }
+
+        private async Task<string> GetFirebaseUpdateCode()
+        {
+            var activationCodeSnapshot = await firebaseClient
+                .Child(UpdateCodeNode)
                 .OnceSingleAsync<string>();
 
             return activationCodeSnapshot ?? string.Empty;
