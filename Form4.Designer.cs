@@ -36,6 +36,8 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            label4 = new Label();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             // 
             chooseFileButton.AllowDrop = true;
             chooseFileButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            chooseFileButton.Location = new Point(12, 240);
+            chooseFileButton.Location = new Point(12, 290);
             chooseFileButton.Name = "chooseFileButton";
             chooseFileButton.Size = new Size(150, 29);
             chooseFileButton.TabIndex = 14;
@@ -97,7 +99,7 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(147, 137);
+            pictureBox1.Location = new Point(147, 180);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(243, 97);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -112,12 +114,32 @@
             panel1.Size = new Size(555, 39);
             panel1.TabIndex = 25;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 120);
+            label4.Name = "label4";
+            label4.Size = new Size(500, 20);
+            label4.TabIndex = 26;
+            label4.Text = "Woolshy Group nie ponosi odpowiedzialności za szkody powstałe wskutek";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(12, 140);
+            label5.Name = "label5";
+            label5.Size = new Size(156, 20);
+            label5.TabIndex = 27;
+            label5.Text = "uszkodzenia pliku PDF";
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(551, 283);
+            ClientSize = new Size(551, 332);
+            Controls.Add(label5);
+            Controls.Add(label4);
             Controls.Add(pictureBox1);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -144,5 +166,7 @@
         private Label label3;
         private PictureBox pictureBox1;
         private Panel panel1;
+        private Label label4;
+        private Label label5;
     }
 }

@@ -76,7 +76,7 @@
             // 
             button2.AllowDrop = true;
             button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button2.Location = new Point(118, 529);
+            button2.Location = new Point(117, 529);
             button2.Name = "button2";
             button2.Size = new Size(150, 29);
             button2.TabIndex = 15;
@@ -88,7 +88,7 @@
             // 
             button4.AllowDrop = true;
             button4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button4.Location = new Point(274, 529);
+            button4.Location = new Point(273, 529);
             button4.Name = "button4";
             button4.Size = new Size(150, 29);
             button4.TabIndex = 16;
@@ -101,7 +101,7 @@
             button5.AllowDrop = true;
             button5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(94, 124);
+            button5.Location = new Point(101, 124);
             button5.Name = "button5";
             button5.Size = new Size(160, 160);
             button5.TabIndex = 18;
@@ -115,7 +115,7 @@
             button6.AllowDrop = true;
             button6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.Location = new Point(94, 305);
+            button6.Location = new Point(101, 305);
             button6.Name = "button6";
             button6.Size = new Size(160, 160);
             button6.TabIndex = 19;
@@ -127,7 +127,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(153, 506);
+            label6.Location = new Point(152, 506);
             label6.Name = "label6";
             label6.Size = new Size(242, 20);
             label6.TabIndex = 20;
@@ -156,7 +156,7 @@
             button7.AllowDrop = true;
             button7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button7.Image = (Image)resources.GetObject("button7.Image");
-            button7.Location = new Point(275, 124);
+            button7.Location = new Point(282, 124);
             button7.Name = "button7";
             button7.Size = new Size(160, 160);
             button7.TabIndex = 23;
@@ -170,7 +170,7 @@
             button8.AllowDrop = true;
             button8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button8.Image = (Image)resources.GetObject("button8.Image");
-            button8.Location = new Point(275, 305);
+            button8.Location = new Point(282, 305);
             button8.Name = "button8";
             button8.Size = new Size(160, 160);
             button8.TabIndex = 24;
