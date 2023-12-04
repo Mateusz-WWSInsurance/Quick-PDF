@@ -44,7 +44,7 @@
             // 
             button2.AllowDrop = true;
             button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button2.Location = new Point(226, 257);
+            button2.Location = new Point(263, 308);
             button2.Name = "button2";
             button2.Size = new Size(150, 29);
             button2.TabIndex = 16;
@@ -55,9 +55,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(483, 249);
+            pictureBox1.Location = new Point(509, 330);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(145, 38);
+            pictureBox1.Size = new Size(160, 45);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
@@ -65,7 +65,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(236, 22);
+            pictureBox2.Location = new Point(273, 43);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(130, 111);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -76,7 +76,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(242, 162);
+            label1.Location = new Point(279, 183);
             label1.Name = "label1";
             label1.Size = new Size(121, 31);
             label1.TabIndex = 19;
@@ -86,7 +86,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label2.Location = new Point(192, 217);
+            label2.Location = new Point(229, 257);
             label2.Name = "label2";
             label2.Size = new Size(224, 25);
             label2.TabIndex = 20;
@@ -101,7 +101,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(640, 301);
+            ClientSize = new Size(680, 384);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox2);

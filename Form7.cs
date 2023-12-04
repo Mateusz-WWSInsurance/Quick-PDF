@@ -34,7 +34,7 @@ namespace WWS_Trimmer
         {
             
             DialogResult result = MessageBox.Show(
-                "Nie można zautoryzować twojej wersji aplikacji, sprawdź połączenie z internetem lub skontaktuj się z WWS Insurance",
+                "Nie można zautoryzować twojej wersji aplikacji, sprawdź połączenie z internetem lub skontaktuj się z obsługą techniczną WWS Insurance",
                 "Błąd autoryzacji",
                 MessageBoxButtons.OK, 
                 MessageBoxIcon.Error 
@@ -54,31 +54,66 @@ namespace WWS_Trimmer
         {
             timer1.Stop();
 
-            // Sprawdzanie kodu w Firebase
-            string firebaseActivationCode = await GetFirebaseActivationCode();
-            string firebaseUpdateCode = await GetFirebaseUpdateCode();
+            label2.Text = ("Autoryzowanie...");
 
-            if (string.Equals(firebaseUpdateCode, UpdateAvailableCode, StringComparison.OrdinalIgnoreCase))
+            try
             {
-                ShowUpdateMessageBox();
-            }
+                // Sprawdzanie kodu w Firebase
+                string firebaseActivationCode = await GetFirebaseActivationCode();
+                string firebaseUpdateCode = await GetFirebaseUpdateCode();
 
-            if (string.Equals(firebaseActivationCode, ExpectedActivationCode, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(firebaseUpdateCode, UpdateAvailableCode, StringComparison.OrdinalIgnoreCase))
+                {
+                    ShowUpdateMessageBox();
+                }
+
+                if (string.Equals(firebaseActivationCode, ExpectedActivationCode, StringComparison.OrdinalIgnoreCase))
+                {
+                    Hide();
+                    Form1 mainForm = new Form1();
+                    mainForm.ShowDialog();
+                    Close();
+                }
+                else
+                {
+                    ShowExitMessageBox();
+                }
+            }
+            catch (HttpRequestException ex)
             {
-                Hide();
-                Form1 mainForm = new Form1();
-                mainForm.ShowDialog();
-                Close();
+                // Obsługa błędu braku połączenia z internetem
+                Debug.WriteLine($"Błąd HTTP: {ex.Message}");
+
+                // Wyświetlenie MessageBox informującego użytkownika o problemie z połączeniem
+                MessageBox.Show(
+                    "Błąd połączenia z internetem. Sprawdź swoje połączenie i spróbuj ponownie.",
+                    "Błąd",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+                // Zamknięcie całej aplikacji
+                Application.Exit();
             }
-
-
-            else
+            catch (Exception ex)
             {
-                ShowExitMessageBox();
-            }
+                // Obsługa innych nieoczekiwanych błędów
+                Debug.WriteLine($"Nieoczekiwany błąd: {ex.Message}");
 
-            
+                // Wyświetlenie MessageBox informującego użytkownika o nieoczekiwanym błędzie
+                MessageBox.Show(
+                    "Wystąpił nieoczekiwany błąd. Sprawdź swoje połączenie z internetem lub skontaktuj się z obsługą techniczną WWS Insurance",
+                    "Błąd",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+                // Zamknięcie całej aplikacji
+                Application.Exit();
+            }
         }
+
+
 
         private void ShowUpdateMessageBox()
         {
@@ -130,4 +165,6 @@ namespace WWS_Trimmer
             Application.Exit();
         }
     }
+
+
 }

@@ -165,7 +165,11 @@ namespace WWS_Trimmer
             {
                 using (var pdfWriter = new PdfWriter(outputPath))
                 {
-                    var pdfDocument = new PdfDocument(pdfReader, pdfWriter);
+                    using (var pdfDocument = new PdfDocument(pdfReader, pdfWriter))
+                    {
+                        // Skonfiguruj właściwości pisarza bezpośrednio na obiekcie PdfDocument
+                        pdfDocument.GetWriter().SetCompressionLevel(4);
+                    }
                 }
             }
         }
