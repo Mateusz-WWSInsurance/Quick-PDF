@@ -69,7 +69,6 @@ namespace WWS_Trimmer
             // URL
             string url = "https://wws-insurance.pl/report";
 
-            // Otwórz link URL w domyœlnej przegl¹darce
             try
             {
                 Process.Start(new ProcessStartInfo
