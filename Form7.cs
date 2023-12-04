@@ -30,8 +30,8 @@ namespace WWS_Trimmer
         {
             
             DialogResult result = MessageBox.Show(
-                "Dostęp do aplikacji został zablokowany, skontaktuj się z producentem",
-                "Blokada dostępu",
+                "Nie można zautoryzować twojej wersji aplikacji, skontaktuj się z WWS Insurance",
+                "Błąd autoryzacji",
                 MessageBoxButtons.OK, 
                 MessageBoxIcon.Error 
             );
