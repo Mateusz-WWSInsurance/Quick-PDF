@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WWS Trimmer", "WWS Trimmer.csproj", "{55E617F3-3A18-4EE2-874A-456E15CD9B99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WWS Trimmer", "WWS Trimmer.csproj", "{55E617F3-3A18-4EE2-874A-456E15CD9B99}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalator", "..\Instalator\Instalator.vdproj", "{46A9DEEE-4770-423C-8C2F-4EFEB470D5DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{55E617F3-3A18-4EE2-874A-456E15CD9B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55E617F3-3A18-4EE2-874A-456E15CD9B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55E617F3-3A18-4EE2-874A-456E15CD9B99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A9DEEE-4770-423C-8C2F-4EFEB470D5DA}.Debug|Any CPU.ActiveCfg = Debug
+		{46A9DEEE-4770-423C-8C2F-4EFEB470D5DA}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
