@@ -66,7 +66,7 @@ namespace WWS_Trimmer
 
         private void button4_Click(object sender, EventArgs e)
         {
-            // Tutaj ustaw adres URL, który chcesz otworzyæ
+            // URL
             string url = "https://wws-insurance.pl/report";
 
             // Otwórz link URL w domyœlnej przegl¹darce
