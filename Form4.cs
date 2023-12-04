@@ -56,7 +56,7 @@ namespace WWS_Trimmer
 
         private void chooseFileButton_Click(object sender, EventArgs e)
         {
-            string url = "https://github.com/Mateusz-WWSInsurance/Quick-PDF";
+            string url = "https://github.com/Mateusz-WWSInsurance/Public-Quick-PDF";
 
             // Otwórz link URL w domyślnej przeglądarce
             try
