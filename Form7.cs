@@ -54,7 +54,7 @@ namespace WWS_Trimmer
         {
             timer1.Stop();
 
-            label2.Text = ("       Autoryzowanie...");
+            label2.Text = ("Łączenie z usługami WWS Insurance");
 
             try
             {

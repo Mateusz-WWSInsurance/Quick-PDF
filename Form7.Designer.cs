@@ -88,11 +88,11 @@
             label2.AutoSize = true;
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label2.Location = new Point(224, 257);
+            label2.Location = new Point(181, 257);
             label2.Name = "label2";
-            label2.Size = new Size(224, 25);
+            label2.Size = new Size(269, 25);
             label2.TabIndex = 20;
-            label2.Text = "Sprawdzanie aktualizacji...";
+            label2.Text = "         Sprawdzanie aktualizacji...";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // timer1

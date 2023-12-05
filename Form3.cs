@@ -161,16 +161,25 @@ namespace WWS_Trimmer
 
         private void CompressPdf(string inputPath, string outputPath)
         {
-            using (var pdfReader = new PdfReader(inputPath))
+            try
             {
-                using (var pdfWriter = new PdfWriter(outputPath))
+                using (var pdfReader = new PdfReader(inputPath))
                 {
-                    using (var pdfDocument = new PdfDocument(pdfReader, pdfWriter))
+                    using (var pdfWriter = new PdfWriter(outputPath).SetSmartMode(true))
                     {
-                        // Skonfiguruj właściwości pisarza bezpośrednio na obiekcie PdfDocument
-                        pdfDocument.GetWriter().SetCompressionLevel(4);
+                        using (var pdfDocument = new PdfDocument(pdfReader, pdfWriter))
+                        {
+                            pdfWriter.SetCompressionLevel(4);
+                        }
                     }
                 }
+
+                MessageBox.Show("Plik PDF został skompresowany i zapisany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                label2.Text = " ";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Wystąpił błąd podczas kompresji PDF: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
