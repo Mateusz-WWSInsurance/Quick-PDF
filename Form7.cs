@@ -102,7 +102,7 @@ namespace WWS_Trimmer
 
                 // Wyświetlenie MessageBox informującego użytkownika o nieoczekiwanym błędzie
                 MessageBox.Show(
-                    "Wystąpił nieoczekiwany błąd. Sprawdź swoje połączenie z internetem lub skontaktuj się z obsługą techniczną WWS Insurance",
+                    "Wystąpił nieoczekiwany błąd. Skontaktuj się z obsługą techniczną WWS Insurance",
                     "Błąd",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error

@@ -38,7 +38,9 @@
     <PackageReference Include="itext" Version="8.0.2" />
     <PackageReference Include="itext7" Version="8.0.2" />
     <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.2" />
+    <PackageReference Include="itext7.commons" Version="8.0.2" />
     <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="Syncfusion.Pdf.WinForms" Version="23.2.7" />
   </ItemGroup>
 
   <ItemGroup>

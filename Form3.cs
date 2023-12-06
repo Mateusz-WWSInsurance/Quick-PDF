@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Parsing;
+using System;
+using System.IO;
 using System.Windows.Forms;
-using iText.Kernel.Pdf;
-using iText.Kernel.Pdf.Canvas.Parser;
-using iText.Kernel.Pdf.Canvas.Parser.Listener;
+
+
 
 
 
@@ -102,28 +98,7 @@ namespace WWS_Trimmer
             }
         }
 
-        private void compressButton_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(inputFile))
-            {
-                MessageBox.Show("Najpierw wybierz plik do kompresji.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Pliki PDF|*.pdf";
-            saveFileDialog.FileName = Path.GetFileNameWithoutExtension(inputFile) + "_quickPDF_compressed.pdf";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string outputPath = saveFileDialog.FileName;
-
-                CompressPdf(inputFile, outputPath);
-
-                MessageBox.Show("Plik PDF został skompresowany i zapisany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                label2.Text = " ";
-            }
-        }
+       
 
         private void maxCompressButton_Click(object sender, EventArgs e)
         {
@@ -159,42 +134,27 @@ namespace WWS_Trimmer
             return outputPath;
         }
 
-        private void CompressPdf(string inputPath, string outputPath)
-        {
-            try
-            {
-                using (var pdfReader = new PdfReader(inputPath))
-                {
-                    using (var pdfWriter = new PdfWriter(outputPath).SetSmartMode(true))
-                    {
-                        using (var pdfDocument = new PdfDocument(pdfReader, pdfWriter))
-                        {
-                            pdfWriter.SetCompressionLevel(4);
-                        }
-                    }
-                }
-
-                MessageBox.Show("Plik PDF został skompresowany i zapisany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                label2.Text = " ";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Wystąpił błąd podczas kompresji PDF: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void MaxCompressPdf(string inputPath, string outputPath)
         {
-            using (var pdfReader = new PdfReader(inputPath))
+            using (var pdfLoadedDocument = new PdfLoadedDocument(inputPath))
             {
-                using (var pdfWriter = new PdfWriter(outputPath))
-                {
-                    using (var pdfDocument = new PdfDocument(pdfReader, pdfWriter))
-                    {
-                        // Skonfiguruj właściwości pisarza bezpośrednio na obiekcie PdfDocument
-                        pdfDocument.GetWriter().SetCompressionLevel(9);
-                    }
-                }
+                // Utwórz nowe opcje kompresji PDF
+                PdfCompressionOptions options = new PdfCompressionOptions();
+
+                // Tutaj możesz dostosować opcje kompresji zgodnie z Twoimi potrzebami
+                options.CompressImages = true;
+                options.ImageQuality = 10; // Maksymalna kompresja obrazów
+                options.OptimizeFont = true;
+                options.OptimizePageContents = true;
+                options.RemoveMetadata = true;
+
+                // Ustaw opcje kompresji dla dokumentu
+                pdfLoadedDocument.CompressionOptions = options;
+
+                // Zapisz maksymalnie skompresowany dokument
+                pdfLoadedDocument.Save(outputPath);
+
             }
         }
 

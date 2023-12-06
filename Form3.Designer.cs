@@ -31,9 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             exitButton = new Button();
             chooseFileButton = new Button();
-            compressButton = new Button();
             maxCompressButton = new Button();
-            label1 = new Label();
             label2 = new Label();
             panel1 = new Panel();
             SuspendLayout();
@@ -65,39 +63,17 @@
             chooseFileButton.UseVisualStyleBackColor = true;
             chooseFileButton.Click += chooseFileButton_Click;
             // 
-            // compressButton
-            // 
-            compressButton.AllowDrop = true;
-            compressButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            compressButton.Location = new Point(75, 193);
-            compressButton.Name = "compressButton";
-            compressButton.Size = new Size(108, 49);
-            compressButton.TabIndex = 14;
-            compressButton.Text = "Normalna kompresja";
-            compressButton.UseVisualStyleBackColor = true;
-            compressButton.Click += compressButton_Click;
-            // 
             // maxCompressButton
             // 
             maxCompressButton.AllowDrop = true;
             maxCompressButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            maxCompressButton.Location = new Point(217, 193);
+            maxCompressButton.Location = new Point(150, 178);
             maxCompressButton.Name = "maxCompressButton";
             maxCompressButton.Size = new Size(108, 49);
             maxCompressButton.TabIndex = 15;
-            maxCompressButton.Text = "Maksymalna kompresja";
+            maxCompressButton.Text = "Kompresuj";
             maxCompressButton.UseVisualStyleBackColor = true;
             maxCompressButton.Click += maxCompressButton_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(108, 153);
-            label1.Name = "label1";
-            label1.Size = new Size(183, 20);
-            label1.TabIndex = 16;
-            label1.Text = "Wybierz rodzaj kompresji";
             // 
             // label2
             // 
@@ -124,9 +100,7 @@
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(405, 254);
             Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(maxCompressButton);
-            Controls.Add(compressButton);
             Controls.Add(chooseFileButton);
             Controls.Add(exitButton);
             Controls.Add(panel1);
@@ -143,9 +117,7 @@
 
         private Button exitButton;
         private Button chooseFileButton;
-        private Button compressButton;
         private Button maxCompressButton;
-        private Label label1;
         private Label label2;
         private Panel panel1;
     }
