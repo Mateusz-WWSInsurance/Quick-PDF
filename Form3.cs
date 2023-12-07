@@ -108,18 +108,35 @@ namespace WWS_Trimmer
                 return;
             }
 
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Pliki PDF|*.pdf";
             saveFileDialog.FileName = Path.GetFileNameWithoutExtension(inputFile) + "_quickPDF_maxCompressed.pdf";
+
+            
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string outputPath = saveFileDialog.FileName;
 
-                MaxCompressPdf(inputFile, outputPath);
+                label5.Text = ("Kompresja w toku, może to chwile zająć");
 
-                MessageBox.Show("Plik PDF został skompresowany i zapisany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                label2.Text = " ";
+                // Utwórz nowy wątek dla operacji kompresji
+                Thread compressThread = new Thread(() =>
+                {
+                    MaxCompressPdf(inputFile, outputPath);
+
+                    // Aktualizuj interfejs użytkownika w głównym wątku
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        MessageBox.Show("Plik PDF został skompresowany i zapisany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        label2.Text = "Wybrany PDF: Brak - skorzystaj z poniższego przycisku";
+                        label5.Text = ("   ");
+                    });
+                });
+
+                // Uruchom wątek
+                compressThread.Start();
             }
         }
 

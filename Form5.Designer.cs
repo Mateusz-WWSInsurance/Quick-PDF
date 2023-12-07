@@ -40,6 +40,7 @@
             button3 = new Button();
             exitButton = new Button();
             panel1 = new Panel();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label5
@@ -151,13 +152,24 @@
             panel1.Size = new Size(449, 39);
             panel1.TabIndex = 25;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            label6.Location = new Point(70, 334);
+            label6.Name = "label6";
+            label6.Size = new Size(22, 25);
+            label6.TabIndex = 30;
+            label6.Text = "  ";
+            // 
             // Form5
             // 
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(436, 347);
+            ClientSize = new Size(436, 368);
+            Controls.Add(label6);
             Controls.Add(exitButton);
             Controls.Add(panel1);
             Controls.Add(button3);
@@ -191,5 +203,6 @@
         private Button button3;
         private Button exitButton;
         private Panel panel1;
+        private Label label6;
     }
 }

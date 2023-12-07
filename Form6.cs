@@ -109,13 +109,11 @@ namespace WWS_Trimmer
         private void button3_Click(object sender, EventArgs e)
         {
             // Sprawdź, czy textboxy są uzupełnione
-
             if (string.IsNullOrEmpty(inputFile))
             {
                 MessageBox.Show("Najpierw wybierz plik.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Pliki PDF|*.pdf";
@@ -124,54 +122,72 @@ namespace WWS_Trimmer
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string outputPath = saveFileDialog.FileName;
+                label6.Text = ("Obracanie pliku w toku, proszę czekać");
 
-                using (var pdfReader = new PdfReader(inputFile))
+                // Utwórz nowy wątek dla operacji zapisywania PDF z ewentualnym obracaniem stron
+                Thread saveThread = new Thread(() =>
                 {
-                    using (var pdfWriter = new PdfWriter(outputPath))
+                    SaveAndRotatePdf(inputFile, outputPath);
+
+                    // Aktualizuj interfejs użytkownika w głównym wątku
+                    this.Invoke((MethodInvoker)delegate
                     {
-                        using (var pdfDocument = new PdfDocument(pdfReader, pdfWriter))
+                        label6.Text = ("  ");
+                        MessageBox.Show("Plik PDF został zapisany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    });
+                });
+
+                // Uruchom wątek
+                saveThread.Start();
+            }
+        }
+
+        private void SaveAndRotatePdf(string inputPath, string outputPath)
+        {
+            using (var pdfReader = new PdfReader(inputPath))
+            {
+                using (var pdfWriter = new PdfWriter(outputPath))
+                {
+                    using (var pdfDocument = new PdfDocument(pdfReader, pdfWriter))
+                    {
+                        var document = new Document(pdfDocument);
+
+                        // Iteruj przez strony i ewentualnie obracaj
+                        for (int i = pdfDocument.GetNumberOfPages(); i > 0; i--)
                         {
-                            var document = new Document(pdfDocument);
+                            var page = pdfDocument.GetPage(i);
 
-
-                            // Iteruj przez strony i usuń te spoza zakresu
-                            for (int i = pdfDocument.GetNumberOfPages(); i > 0; i--)
+                            if (checkBoxRotate.Checked)
                             {
-                                var page = pdfDocument.GetPage(i);
-
-
-                                if (checkBoxRotate.Checked)
+                                if (page != null)
                                 {
-                                    if (page != null)
-                                    {
-                                        page.SetRotation((page.GetRotation() + 90) % 360);
-                                    }
+                                    page.SetRotation((page.GetRotation() + 90) % 360);
                                 }
-                                else if (checkBoxRotateRv.Checked)
-                                {
-                                    page.SetRotation((page.GetRotation() - 90) % 360);
-                                }
-
-
                             }
-
-                            MessageBox.Show("Plik PDF został zapisany");
+                            else if (checkBoxRotateRv.Checked)
+                            {
+                                page.SetRotation((page.GetRotation() - 90) % 360);
+                            }
                         }
                     }
                 }
             }
 
 
-            if (checkBoxRotateRv.Checked)
+            this.Invoke((MethodInvoker)delegate
             {
-                checkBoxRotateRv.Checked = false;
-            }
+                if (checkBoxRotateRv.Checked)
+                {
+                    checkBoxRotateRv.Checked = false;
+                }
 
-            if (checkBoxRotate.Checked)
-            {
-                checkBoxRotate.Checked = false;
+                if (checkBoxRotate.Checked)
+                {
+                    checkBoxRotate.Checked = false;
+                }
 
-            }
+                label6.Text = "  ";
+            });
         }
 
 

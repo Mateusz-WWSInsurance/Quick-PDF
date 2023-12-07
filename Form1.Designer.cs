@@ -127,11 +127,11 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(152, 506);
+            label6.Location = new Point(62, 506);
             label6.Name = "label6";
-            label6.Size = new Size(242, 20);
+            label6.Size = new Size(423, 20);
             label6.TabIndex = 20;
-            label6.Text = "Quick PDF v. 2.0.9 |  WWS Insurance";
+            label6.Text = "Quick PDF v. 2.0.9 |  WWS Insurance and Syncfusion technology";
             // 
             // label7
             // 

@@ -36,6 +36,7 @@
             labelFirstPdf = new Label();
             labelSecondPdf = new Label();
             panel1 = new Panel();
+            label5 = new Label();
             SuspendLayout();
             // 
             // exitButton
@@ -117,14 +118,25 @@
             panel1.Size = new Size(410, 39);
             panel1.TabIndex = 23;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            label5.Location = new Point(58, 323);
+            label5.Name = "label5";
+            label5.Size = new Size(27, 25);
+            label5.TabIndex = 29;
+            label5.Text = "   ";
+            // 
             // Form2
             // 
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(399, 329);
+            ClientSize = new Size(399, 357);
             ControlBox = false;
+            Controls.Add(label5);
             Controls.Add(labelSecondPdf);
             Controls.Add(labelFirstPdf);
             Controls.Add(buttonMergePdf);
@@ -151,5 +163,6 @@
         private Label labelFirstPdf;
         private Label labelSecondPdf;
         private Panel panel1;
+        private Label label5;
     }
 }

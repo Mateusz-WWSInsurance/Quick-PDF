@@ -37,6 +37,7 @@
             label5 = new Label();
             button1 = new Button();
             pictureBoxS = new PictureBox();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxS).BeginInit();
             SuspendLayout();
             // 
@@ -127,12 +128,23 @@
             pictureBoxS.TabIndex = 32;
             pictureBoxS.TabStop = false;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            label6.Location = new Point(33, 283);
+            label6.Name = "label6";
+            label6.Size = new Size(22, 25);
+            label6.TabIndex = 33;
+            label6.Text = "  ";
+            // 
             // Form6
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(740, 310);
+            ClientSize = new Size(740, 314);
+            Controls.Add(label6);
             Controls.Add(pictureBoxS);
             Controls.Add(label5);
             Controls.Add(button1);
@@ -161,5 +173,6 @@
         private Label label5;
         private Button button1;
         private PictureBox pictureBoxS;
+        private Label label6;
     }
 }

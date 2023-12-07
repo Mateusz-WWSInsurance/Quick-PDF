@@ -20,7 +20,7 @@ namespace WWS_Trimmer
         private const string ActivationCodeNode = "activationCode";
         private const string UpdateCodeNode = "updateCode";
         private readonly FirebaseClient firebaseClient = new FirebaseClient(FirebaseUrl);
-        private const string ExpectedActivationCode = "512325468";
+        private const string ExpectedActivationCode = "Interrisk1";
         private const string UpdateAvailableCode = "1"; // jeśli jest aktualizacja zmienić kod w firebase na 1, w nowej apce zmienić kod tutaj w visual na 2
         public Form7()
         {
@@ -40,6 +40,7 @@ namespace WWS_Trimmer
                 MessageBoxIcon.Error 
             );
 
+
             // Sprawdzenie, czy użytkownik nacisnął OK
             if (result == DialogResult.OK)
             {
@@ -47,6 +48,7 @@ namespace WWS_Trimmer
                 Application.Exit();
             }
         }
+
 
         
         // Uwaga! Kod odpowiadajacy za weryfikację aktualizacji z bazą danych WWS Insurance jest ukryty na potrzeby opubblikowania pozostałego kodu źródłowego w GitHub
@@ -102,7 +104,7 @@ namespace WWS_Trimmer
 
                 // Wyświetlenie MessageBox informującego użytkownika o nieoczekiwanym błędzie
                 MessageBox.Show(
-                    "Wystąpił nieoczekiwany błąd. Skontaktuj się z obsługą techniczną WWS Insurance",
+                    "Wystąpił nieoczekiwany błąd. Jeśli błąd wystąpił podczas uruchamiania aplikacji sprawdź swoje połączenie z internetem, w przeciwnym razie skontaktuj się z obsługą techniczną WWS Insurance.",
                     "Błąd",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error

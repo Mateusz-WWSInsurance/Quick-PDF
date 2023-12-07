@@ -109,13 +109,11 @@ namespace WWS_Trimmer
         private void button3_Click(object sender, EventArgs e)
         {
             // Sprawdź, czy textboxy są uzupełnione
-
             if (string.IsNullOrEmpty(inputFile))
             {
                 MessageBox.Show("Najpierw wybierz plik do przycięcia.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Pliki PDF|*.pdf";
@@ -124,34 +122,48 @@ namespace WWS_Trimmer
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string outputPath = saveFileDialog.FileName;
+                label6.Text = ("Przycinanie w toku, proszę czekać");
 
-                using (var pdfReader = new PdfReader(inputFile))
+                // Utwórz nowy wątek dla operacji przycinania PDF
+                Thread trimThread = new Thread(() =>
                 {
-                    using (var pdfWriter = new PdfWriter(outputPath))
+                    TrimPdf(inputFile, outputPath);
+
+                    // Aktualizuj interfejs użytkownika w głównym wątku
+                    this.Invoke((MethodInvoker)delegate
                     {
-                        using (var pdfDocument = new PdfDocument(pdfReader, pdfWriter))
+                        label6.Text = ("  ");
+                        MessageBox.Show("Plik PDF został zapisany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    });
+                });
+
+                // Uruchom wątek
+                trimThread.Start();
+            }
+        }
+
+        private void TrimPdf(string inputPath, string outputPath)
+        {
+            using (var pdfReader = new PdfReader(inputPath))
+            {
+                using (var pdfWriter = new PdfWriter(outputPath))
+                {
+                    using (var pdfDocument = new PdfDocument(pdfReader, pdfWriter))
+                    {
+                        var document = new Document(pdfDocument);
+
+                        // Iteruj przez strony i usuń te spoza zakresu
+                        for (int i = pdfDocument.GetNumberOfPages(); i > 0; i--)
                         {
-                            var document = new Document(pdfDocument);
+                            var page = pdfDocument.GetPage(i);
 
+                            int startPage = string.IsNullOrEmpty(textBox1.Text) ? 1 : int.Parse(textBox1.Text);
+                            int endPage = string.IsNullOrEmpty(textBox2.Text) ? pdfDocument.GetNumberOfPages() : int.Parse(textBox2.Text);
 
-                            // Iteruj przez strony i usuń te spoza zakresu
-                            for (int i = pdfDocument.GetNumberOfPages(); i > 0; i--)
+                            if (i < startPage || i > endPage)
                             {
-                                var page = pdfDocument.GetPage(i);
-
-                                int startPage = string.IsNullOrEmpty(textBox1.Text) ? 1 : int.Parse(textBox1.Text);
-                                int endPage = string.IsNullOrEmpty(textBox2.Text) ? pdfDocument.GetNumberOfPages() : int.Parse(textBox2.Text);
-
-                                if (i < startPage || i > endPage)
-                                {
-                                    pdfDocument.RemovePage(i);
-                                }
-
-
-
+                                pdfDocument.RemovePage(i);
                             }
-
-                            MessageBox.Show("Plik PDF został zapisany");
                         }
                     }
                 }

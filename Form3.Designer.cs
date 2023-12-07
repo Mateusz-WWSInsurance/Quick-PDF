@@ -37,6 +37,7 @@
             label1 = new Label();
             label3 = new Label();
             label4 = new Label();
+            label5 = new Label();
             SuspendLayout();
             // 
             // exitButton
@@ -126,12 +127,23 @@
             label4.TabIndex = 27;
             label4.Text = "Plik PDF zostanie zapisany jako nowy plik, oryginalny pozostanie bez zmian";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            label5.Location = new Point(111, 279);
+            label5.Name = "label5";
+            label5.Size = new Size(32, 25);
+            label5.TabIndex = 28;
+            label5.Text = "    ";
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(561, 282);
+            ClientSize = new Size(561, 314);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
@@ -159,5 +171,6 @@
         private Label label1;
         private Label label3;
         private Label label4;
+        private Label label5;
     }
 }

@@ -92,31 +92,48 @@ namespace WWS_Trimmer
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string outputPdfPath = saveFileDialog.FileName;
+                label5.Text = ("Scalanie w toku, proszę czekać");
 
-                using (var pdfWriter = new PdfWriter(outputPdfPath))
+                // Utwórz nowy wątek dla operacji łączenia PDF
+                Thread mergeThread = new Thread(() =>
                 {
-                    using (var pdfDocument = new PdfDocument(pdfWriter))
+                    MergePdfFiles(firstPdfFile, secondPdfFile, outputPdfPath);
+
+                    // Aktualizuj interfejs użytkownika w głównym wątku
+                    this.Invoke((MethodInvoker)delegate
                     {
-                        PdfMerger merger = new PdfMerger(pdfDocument);
+                        label5.Text = ("  ");
+                        MessageBox.Show("Pliki PDF zostały połączone i zapisane.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    });
+                });
 
-                        // Dodaj pierwszy plik PDF
-                        using (var firstPdfReader = new PdfReader(firstPdfFile))
-                        {
-                            PdfDocument firstPdfDocument = new PdfDocument(firstPdfReader);
-                            merger.Merge(firstPdfDocument, 1, firstPdfDocument.GetNumberOfPages());
-                        }
+                // Uruchom wątek
+                mergeThread.Start();
+            }
+        }
 
-                        // Dodaj drugi plik PDF
-                        using (var secondPdfReader = new PdfReader(secondPdfFile))
-                        {
-                            PdfDocument secondPdfDocument = new PdfDocument(secondPdfReader);
-                            merger.Merge(secondPdfDocument, 1, secondPdfDocument.GetNumberOfPages());
-                        }
+        private void MergePdfFiles(string firstPdfFile, string secondPdfFile, string outputPdfPath)
+        {
+            using (var pdfWriter = new PdfWriter(outputPdfPath))
+            {
+                using (var pdfDocument = new PdfDocument(pdfWriter))
+                {
+                    PdfMerger merger = new PdfMerger(pdfDocument);
+
+                    // Dodaj pierwszy plik PDF
+                    using (var firstPdfReader = new PdfReader(firstPdfFile))
+                    {
+                        PdfDocument firstPdfDocument = new PdfDocument(firstPdfReader);
+                        merger.Merge(firstPdfDocument, 1, firstPdfDocument.GetNumberOfPages());
+                    }
+
+                    // Dodaj drugi plik PDF
+                    using (var secondPdfReader = new PdfReader(secondPdfFile))
+                    {
+                        PdfDocument secondPdfDocument = new PdfDocument(secondPdfReader);
+                        merger.Merge(secondPdfDocument, 1, secondPdfDocument.GetNumberOfPages());
                     }
                 }
-
-                MessageBox.Show("Pliki PDF zostały połączone i zapisane.");
-
             }
         }
 
