@@ -21,7 +21,7 @@ namespace WWS_Trimmer
         private const string UpdateCodeNode = "updateCode";
         private readonly FirebaseClient firebaseClient = new FirebaseClient(FirebaseUrl);
         private const string ExpectedActivationCode = "Interrisk1";
-        private const string UpdateAvailableCode = "1"; // jeśli jest aktualizacja zmienić kod w firebase na 1, w nowej apce zmienić kod tutaj w visual na 2
+        private const string UpdateAvailableCode = "2"; // jeśli jest aktualizacja zmienić kod w firebase na 1, w nowej apce zmienić kod tutaj w visual na 2
         public Form7()
         {
             InitializeComponent();
