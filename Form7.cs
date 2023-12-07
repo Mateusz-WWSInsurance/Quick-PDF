@@ -16,12 +16,7 @@ namespace WWS_Trimmer
 {
     public partial class Form7 : Form
     {
-        private const string FirebaseUrl = "https://quick-pdf-auth-default-rtdb.europe-west1.firebasedatabase.app/";
-        private const string ActivationCodeNode = "activationCode";
-        private const string UpdateCodeNode = "updateCode";
-        private readonly FirebaseClient firebaseClient = new FirebaseClient(FirebaseUrl);
-        private const string ExpectedActivationCode = "Interrisk1";
-        private const string UpdateAvailableCode = "2"; // jeśli jest aktualizacja zmienić kod w firebase na 1, w nowej apce zmienić kod tutaj w visual na 2
+       HIDDEN FOR SECURITY REASONS 
         public Form7()
         {
             InitializeComponent();
