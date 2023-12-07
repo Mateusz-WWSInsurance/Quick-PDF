@@ -123,6 +123,7 @@ namespace WWS_Trimmer
             {
                 string outputPath = saveFileDialog.FileName;
                 label6.Text = ("Przycinanie w toku, proszę czekać");
+                button3.Enabled = false;
 
                 // Utwórz nowy wątek dla operacji przycinania PDF
                 Thread trimThread = new Thread(() =>
@@ -133,6 +134,7 @@ namespace WWS_Trimmer
                     this.Invoke((MethodInvoker)delegate
                     {
                         label6.Text = ("  ");
+                        button3.Enabled = true;
                         MessageBox.Show("Plik PDF został zapisany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     });
                 });

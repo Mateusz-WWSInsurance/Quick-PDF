@@ -93,6 +93,7 @@ namespace WWS_Trimmer
             {
                 string outputPdfPath = saveFileDialog.FileName;
                 label5.Text = ("Scalanie w toku, proszę czekać");
+                buttonMergePdf.Enabled = false;
 
                 // Utwórz nowy wątek dla operacji łączenia PDF
                 Thread mergeThread = new Thread(() =>
@@ -103,6 +104,7 @@ namespace WWS_Trimmer
                     this.Invoke((MethodInvoker)delegate
                     {
                         label5.Text = ("  ");
+                        buttonMergePdf.Enabled = true;
                         MessageBox.Show("Pliki PDF zostały połączone i zapisane.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     });
                 });

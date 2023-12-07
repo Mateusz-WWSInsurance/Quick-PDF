@@ -120,6 +120,7 @@ namespace WWS_Trimmer
                 string outputPath = saveFileDialog.FileName;
 
                 label5.Text = ("Kompresja w toku, może to chwile zająć");
+                maxCompressButton.Enabled = false;
 
                 // Utwórz nowy wątek dla operacji kompresji
                 Thread compressThread = new Thread(() =>
@@ -132,6 +133,7 @@ namespace WWS_Trimmer
                         MessageBox.Show("Plik PDF został skompresowany i zapisany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         label2.Text = "Wybrany PDF: Brak - skorzystaj z poniższego przycisku";
                         label5.Text = ("   ");
+                        maxCompressButton.Enabled = true;
                     });
                 });
 
